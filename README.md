@@ -4,7 +4,7 @@ this project is a personal project for project for learn the basic of python
 
 ### usage :
  - clone the repo
- - `./installer.py`
+ - `./installer.sh`
  - follow the instruction
  - `to start the gui type python3 upload_ssh.py`
 
