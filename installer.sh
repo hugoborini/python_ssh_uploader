@@ -30,12 +30,11 @@ send_bouton=Button(fenetre, text='send your file', command=lambda : upload_folde
 
 
 def createall() : 
-    local_path_label.pack()
-    path_local_input.pack()
-    serv_path_label.pack()
-    path_serv_input.pack()
-    send_bouton.pack()
-
+    local_path_label.pack(padx=50, pady=10)
+    path_local_input.pack(padx=5, pady=20)
+    serv_path_label.pack(padx=5, pady=2)
+    path_serv_input.pack(padx=5, pady=20)
+    send_bouton.pack(padx=5, pady=2)
 
 
 createall()
