@@ -15,6 +15,10 @@ serv_path_label = Label(fenetre, text='path to your sever: ')
 def upload_folder_ssh(p_file, serv_path):
     os.system('scp -r -i $path_to_ssh_key ' + p_file + ' $user_name@$ip_serv:' + serv_path)
 
+def connect_serv():
+    fenetre.destroy()
+    os.system('ssh -i $path_to_ssh_key $user_name@$ip_serv')
+
 def createInput(message) :
     input_str =  StringVar()
     input_str.set(message)
@@ -27,6 +31,7 @@ def createInput(message) :
 path_local_input = createInput('exemple /path/to/local/file')
 path_serv_input = createInput('exemple /path/to/your/serv')
 send_bouton=Button(fenetre, text='send your file', command=lambda : upload_folder_ssh(path_local_input.get(), path_serv_input.get()))
+co_button=Button(fenetre, text='connect to your serv', command=lambda : connect_serv())
 
 
 def createall() : 
@@ -35,6 +40,7 @@ def createall() :
     serv_path_label.pack(padx=5, pady=2)
     path_serv_input.pack(padx=5, pady=20)
     send_bouton.pack(padx=5, pady=2)
+    co_button.pack()
 
 
 createall()
